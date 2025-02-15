@@ -1,0 +1,219 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* Portal background */
+  .portal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, #1a1a3a 0%, #000 100%);
+    z-index: -2;
+  }
+  
+  .grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        rgba(66, 133, 244, 0.1) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(66, 133, 244, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+  }
+  .video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    opacity: 0.6;
+  }
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #4285f4, #ea4335);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 20px rgba(66, 133, 244, 0.3);
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #4285f4;
+    opacity: 0.8;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+  }
+  
+  .member-card {
+    position: relative;
+    height: 450px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(66, 133, 244, 0.2);
+  }
+  
+  .card-content {
+    position: relative;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .image-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(
+      circle at center,
+      rgba(66, 133, 244, 0.3),
+      transparent 70%
+    );
+    border-radius: 50%;
+    z-index: -1;
+  }
+  
+  .member-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  
+  .member-role {
+    font-size: 1rem;
+    color: #4285f4;
+    margin-bottom: 1rem;
+  }
+  
+  .member-universe {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 1rem;
+  }
+  
+  .icon-container {
+    margin: 0.5rem 0;
+    color: #f8f8f8;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid rgba(66, 133, 244, 0.3);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    background: rgba(66, 133, 244, 0.1);
+    border-color: #4285f4;
+  }
+  
+  .alt-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(66, 133, 244, 0.1);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: scale(0.8);
+    padding: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .member-card {
+      height: 400px;
+    }
+  }
+  
