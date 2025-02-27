@@ -1,0 +1,37 @@
+.btn {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .btn span {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, blue, rgb(182, 0, 238));
+    z-index: -1;
+    border-radius: 8px;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  .btn:hover span {
+    filter: blur(5px);
+  }
+  
+
+
+
+
+
+
+
+  

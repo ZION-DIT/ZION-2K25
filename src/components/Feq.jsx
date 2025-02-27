@@ -4,24 +4,24 @@ import { ChevronDown, BookOpen } from 'lucide-react';
 
 const faqs = [
   {
-    question: "What services do you provide?",
-    answer: "We offer a comprehensive suite of digital solutions including web development, mobile app development, cloud services, and digital transformation consulting. Our team specializes in creating custom solutions tailored to your specific business needs."
+    question: "What is ZION?",
+    answer: "Zion is an annual technical festival organized by Dr. D.Y. Patil Institute of Technology, Pimpri, Pune, that aims to provide a platform for students to showcase their technical skills and creativity."
   },
   {
-    question: "How long does a typical project take?",
-    answer: "Project timelines vary depending on complexity and scope. A simple website might take 4-6 weeks, while more complex applications can take 3-6 months. During our initial consultation, we'll provide a detailed timeline based on your specific requirements."
+    question: "What is the edition of ZION?",
+    answer: "After 17 successful editions, it is the 18 edition of ZION Tech Fest."
   },
   {
-    question: "What is your pricing structure?",
-    answer: "We offer flexible pricing models including fixed-price projects, time and materials, and retainer-based services. Each project is unique, and we'll work with you to find the most cost-effective solution that meets your needs and budget."
+    question: "How to Reach?",
+    answer: "Nearest Metro Station: Sant Tukaram nagar, Nearest Bus Stop: YCM, Nearest Bus Station: Vallabhnagar Bus Station, Nearest Airport: Viman Nagar. Also in the footer of this page we have provided map of way to our college."
   },
   {
-    question: "Do you provide ongoing support?",
-    answer: "Yes, we offer comprehensive maintenance and support packages. This includes regular updates, security patches, performance monitoring, and technical support. We can customize a support plan that fits your specific needs."
+    question: "How much will it cost?",
+    answer: "Event registration prices vary. But we assure you that it will a very good investment from the prespective of experience."
   },
   {
-    question: "What technologies do you use?",
-    answer: "We stay current with the latest technologies and choose the best tools for each project. Our tech stack includes React, Node.js, Python, AWS, and many other modern technologies. We'll recommend the most appropriate technology based on your project requirements."
+    question: "What if I don't know how to code?",
+    answer: "No worries, there is a wide range of events other than coding that will be taking place in ZION Tech Fest."
   }
 ];
 
@@ -35,12 +35,13 @@ function FAQItem({ question, answer }) {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="d-flex align-items-center">
-          <BookOpen className="me-3" size={20} color="#4dabf7" />
+          <BookOpen className="me-3" size={20} color="#8c00ff" />
           <span className="h5 mb-0">{question}</span>
         </div>
         <ChevronDown
           className={`chevron-icon flex-shrink-0 ms-3 ${isOpen ? 'rotate' : ''}`}
           size={24}
+          color='#8c00ff'
         />
       </button>
       <div className={`faq-answer ${isOpen ? 'show' : 'hide'}`}>
@@ -63,7 +64,8 @@ function App() {
       <div className="glow glow-3"></div>
       <div className="container py-5 position-relative">
         <div className="text-center mb-5">
-          <h1 className="page-title display-4 mb-4">
+          
+          <h1 className="page-title display-4 mb-4 text-glow">
             The Cosmic Library
           </h1>
           <p className="subtitle mx-auto" style={{ maxWidth: '700px' }}>

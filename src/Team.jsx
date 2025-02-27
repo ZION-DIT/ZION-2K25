@@ -331,7 +331,7 @@ function App() {
       <div className="portal-background" />
       <video className="video-bg" autoPlay loop muted>
         <source
-          src="https://cdn.pixabay.com/video/2020/01/19/31420-386853523_large.mp4"
+          src="https://cdn.pixabay.com/video/2024/06/07/215697_large.mp4"
           type="video/mp4"
         />
       </video>
@@ -339,10 +339,9 @@ function App() {
       <div className="grid-overlay" />
 
       <div className="container">
-        <header className="header">
-          <h1 className="title">Protectors of Multiverse</h1>
-          <p className="subtitle">Bridging realities, one event at a time</p>
-        </header>
+      <header>
+        <h1>Keepers of Multiverse</h1>
+      </header>
 
         <div className="team-grid" ref={gridRef}>
           {teamMembers.map((member, index) => (
