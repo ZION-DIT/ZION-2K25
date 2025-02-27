@@ -22,6 +22,38 @@ const sponsors = {
       website: "https://starsystems.example",
       founded: "2145",
     },
+    {
+      id: 3,
+      name: "Cosmic Corp",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3l_z-KqYZ1_qLGih0bwyxiKLBdgOkCwr-PQ&s",
+      description: "Pioneering quantum computing solutions for the multiverse",
+      website: "https://cosmiccorp.example",
+      founded: "2150",
+    },
+    {
+      id: 4,
+      name: "Cosmic Corp",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3l_z-KqYZ1_qLGih0bwyxiKLBdgOkCwr-PQ&s",
+      description: "Pioneering quantum computing solutions for the multiverse",
+      website: "https://cosmiccorp.example",
+      founded: "2150",
+    },
+    {
+      id: 5,
+      name: "Cosmic Corp",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3l_z-KqYZ1_qLGih0bwyxiKLBdgOkCwr-PQ&s",
+      description: "Pioneering quantum computing solutions for the multiverse",
+      website: "https://cosmiccorp.example",
+      founded: "2150",
+    },
+    {
+      id: 6,
+      name: "Cosmic Corp",
+      logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3l_z-KqYZ1_qLGih0bwyxiKLBdgOkCwr-PQ&s",
+      description: "Pioneering quantum computing solutions for the multiverse",
+      website: "https://cosmiccorp.example",
+      founded: "2150",
+    },
   ],
   galactic: [
     {
@@ -131,17 +163,17 @@ function App() {
     <div className="multiverse-container">
       <video className="video-bg" autoPlay loop muted>
         <source
-          // src="https://cdn.pixabay.com/video/2024/06/02/215018_large.mp4"
           src="https://cdn.pixabay.com/video/2019/06/06/24243-341474042_large.mp4"
           type="video/mp4"
           />
       </video>
-      <Navbar/>
+      <Navbar number="670" page="sponsers"/>
+      <br /><br />
       <div className="stars"></div>
       <div className="twinkling"></div>
 
       <header>
-        <h1>Multiverse of Sponsors</h1>
+        <h1>UNIVERSE OF SPONSERS</h1>
       </header>
 
       <main>

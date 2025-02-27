@@ -1,52 +1,149 @@
-import React from 'react';
-import { Compass, Search, Home, Users, BookOpen, Phone, Mail, Calendar, Bell, ShieldQuestion, Handshake  } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [prevScrollPos]);
+
+  const menuItems = [
+    { name: 'Home', link: '/' },
+    { name: 'About', link: 'about' },
+    { name: 'Events', link: '/events' },
+    { name: 'Sponsors', link: '/sponsers' },
+    { name: 'Team', link: '/team' },
+    { name: 'FAQ', link: '/faq' }
+  ];
+
+  const leftMenuItems = menuItems.slice(0, Math.ceil(menuItems.length / 2));
+  const rightMenuItems = menuItems.slice(Math.ceil(menuItems.length / 2));
 
   return (
-    <nav className="navbar position-static">
-      <div className="nav-section left">
-        <div className="nav-buttons">
-          <a href="/" className="nav-button outline">
-            <span className="nav-icon"><Home size={18} /></span>
-            <span>Home</span>
-          </a>
-          <a href="about" className="nav-button outline">
-            <span className="nav-icon"><BookOpen size={18} /></span>
-            <span>About</span>
-          </a>
-          <a href="/events" className="nav-button outline">
-            <span className="nav-icon"><Calendar size={18} /></span>
-            <span>Events</span>
-          </a>
+    <motion.nav 
+      className="navbar"
+      initial={{ y: 0 }}
+      animate={{ y: visible ? 0 : -100 }}
+      transition={{ duration: 0.3 }}
+    >
+      <div className="navbar-container">
+        <div className="navbar-content">
+          {/* Desktop Menu */}
+          <div className="desktop-menu">
+            <ul className="menu-left">
+              {leftMenuItems.map((item, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ 
+                    scale: 1.1,
+                    textShadow: "0 0 8px rgba(131, 56, 236, 0.8), 0 0 12px rgba(131, 56, 236, 0.5)"
+                  }}
+                >
+                  <strong><a href={item.link}>{item.name}</a></strong>
+                </motion.li>
+              ))}
+            </ul>
+            
+            <motion.div 
+              className="logo-container"
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            >
+              <img 
+                src="zionlogo.png" 
+                alt="Zion Logo" 
+                className="logo"
+              />
+            </motion.div>
+            
+            <ul className="menu-right">
+              {rightMenuItems.map((item, index) => (
+                <motion.li 
+                  key={index}
+                  whileHover={{ 
+                    scale: 1.1,
+                    textShadow: "0 0 8px rgba(131, 56, 236, 0.8), 0 0 12px rgba(131, 56, 236, 0.5)"
+                  }}
+                >
+                  <strong><a href={item.link}>{item.name}</a></strong>
+                </motion.li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Mobile Menu Button */}
+          <div className="mobile-menu-button">
+            <motion.div 
+              className="logo-container-mobile"
+              whileHover={{ scale: 1.2 }}
+              transition={{ duration: 2, ease: "easeInOut" }}
+            >
+              <img 
+                src="zionlogo.png" 
+                alt="Zion Logo" 
+                className="logo-mobile"
+              />
+            </motion.div>
+            <motion.button 
+              onClick={toggleMenu}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="menu-toggle"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </motion.button>
+          </div>
+          
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isOpen && (
+              <motion.div 
+                className="mobile-menu"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ul>
+                  {menuItems.map((item, index) => (
+                    <motion.li 
+                      key={index}
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ delay: index * 0.05 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        textShadow: "0 0 8px rgba(131, 56, 236, 0.8), 0 0 12px rgba(131, 56, 236, 0.5)"
+                      }}
+                    >
+                      
+                      <strong><a href={item.link} onClick={toggleMenu}>{item.name}</a></strong>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-      
-      <div className="nav-section center">
-        <a href="/" className="logo ">
-          {/* <Compass className="logo-icon me-2" size={32} /> */}
-          <span className='logo-image-container'><img src="/zionlogo.png" alt="" className='logo-img'/></span>
-        </a>
-      </div>
-      
-      <div className="nav-section right">
-        <div className="nav-buttons">
-          <a href="/sponsers" className="nav-button">
-            <span className="nav-icon"><Handshake size = {18}/></span>
-            <span>Sponsers</span>
-          </a>
-          <a href="/team" className="nav-button">
-            <span className="nav-icon"><Users size={18} /></span>
-            <span>Team</span>
-          </a>
-          <a href="/faq" className="nav-button">
-            <span className="nav-icon"><ShieldQuestion size={18} /></span>
-            <span>FAQ</span>
-          </a>
-        </div>
-      </div>
-    </nav>
+    </motion.nav>
   );
 };
 

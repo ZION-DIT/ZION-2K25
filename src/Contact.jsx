@@ -9,7 +9,7 @@ import Navbar from "./Navbar.jsx"
 
 const Contact = () => {
   const navItems = [
-    { id: 'home', label: 'Home' },
+    { id: 'home', label: '' },
     { id: 'about', label: 'About' },
     { id: 'events', label: 'Events' },
     { id: 'sponsors', label: 'Sponsors' },
@@ -34,11 +34,11 @@ const Contact = () => {
             <div className="d-flex flex-column gap-2">
               <p className="d-flex align-items-center text-secondary">
                 <MapPin className="me-2" size={20} />
-                123 Tech Street, Innovation City
+                Dr. D. Y. Patil Dnyan Prasad University, Pimpri, Pune 
               </p>
               <p className="d-flex align-items-center text-secondary">
                 <Mail className="me-2" size={20} />
-                info@ziontechfest.com
+                
               </p>
               <p className="d-flex align-items-center text-secondary">
                 <Phone className="me-2" size={20} />
@@ -54,7 +54,7 @@ const Contact = () => {
               {navItems.map((item) => (
                 <a
                   key={item.id}
-                  href={`#${item.id}`}
+                  href={`/${item.id}`}
                   className="text-secondary text-decoration-none hover-text-light"
                 >
                   {item.label}
@@ -68,7 +68,7 @@ const Contact = () => {
           <div className="col-md-4">
             <h3 className="h5 fw-bold text-light mb-3">Location</h3>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.5241363962674!2d73.81213597510403!3d18.63013478247808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b92fc552a8d1%3A0xe6c75e509fc02a47!2sDr.%20D.%20Y.%20Patil%20Institute%20of%20Technology%2C%20Sant%20Tukaram%20Nagar%2C%20Pimpri%2C%20Pune%2C%20Maharashtra%20411018!5e0!3m2!1sen!2sin!4v1707390123456!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3783.5241363962674!2d73.81213597510403!3d18.63013478247808!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b92fc552a8d1%3A0xe6c75e509fc02a47!2sDr.%20D.%20Y.%20Patil%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1707390123456!5m2!1sen!2sin"
               width="100%"
               height="200"
               style={{ border: 0 }}
@@ -79,11 +79,12 @@ const Contact = () => {
             </iframe>
           </div>
 
+
         </div>
 
         {/* Copyright Text */}
         <div className="text-center mt-4 text-secondary">
-          <p>© 2024 Zion Techfest. All rights reserved.</p>
+          <p>&copy; 2025 Team Zion . All rights reserved.</p>
         </div>
       </div>
     </footer>
