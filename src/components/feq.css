@@ -1,0 +1,160 @@
+/* Import Bootstrap CSS */
+/* @import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+body{
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background: scroll;
+  /* text-shadow: 0 0 10px #8c00ff, 0 0 20px #5900ff, 0 0 30px #8400ff; */
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  
+}
+.coordinator-card {
+  transition: transform 0.3s ease;
+}
+
+.coordinator-card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+
+.floating-shelf {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.faq-card {
+  background: linear-gradient(45deg, rgba(132, 0, 255, 0.185) , rgb(0, 0, 0));
+  border: 1px solid rgba(0, 0, 0, 0.966);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  font-size: 19px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.faq-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 123, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.faq-button {
+  background: transparent;
+  border: none;
+  padding: 1.5rem !important;
+  color: #fff !important;
+  width: 100%;
+  text-align: left;
+  position: relative;
+}
+
+.faq-button:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faq-button:focus {
+  box-shadow: none !important;
+}
+
+.faq-answer {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.faq-answer.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.faq-answer.hide {
+  max-height: 0;
+  opacity: 0;
+  padding: 0 !important;
+}
+
+.chevron-icon {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4dabf7;
+}
+
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+.page-title {
+  font-family: 'system-ui', sans-serif;
+  background: linear-gradient(45deg, #4dabf7, #228be6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  text-shadow: 0 0 30px rgba(77, 171, 247, 0.3);
+  position: relative;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #4dabf7, transparent);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.glow {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(77, 171, 247, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+h1 {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: 4rem;
+  font-size: 3.5rem;
+  color: #fff;
+  /* text-shadow: 0 0 10px #8c00ff, 0 0 20px #5900ff, 0 0 30px #8400ff; */
+  margin-bottom: 2rem;
+}
+
+.glow-1 { top: 10%; left: 5%; }
+.glow-2 { bottom: 20%; right: 10%; }
+.glow-3 { top: 50%; left: 15%; }
+

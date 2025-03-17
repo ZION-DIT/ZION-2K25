@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ziondit.tech/sitemap.xml

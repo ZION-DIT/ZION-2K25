@@ -1,0 +1,194 @@
+body{
+  color: #ffffff;
+}
+.contact-page {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.video-bg{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the screen */
+  z-index: -1; /* Sends the video to the background */
+}
+
+.contact-us{
+  color: #0d6efd;
+  text-transform: uppercase;
+  font-size: 40px;
+  height: 100px;
+}
+
+
+.container {
+  flex: 1;
+ 
+}
+
+
+
+.coordinator-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.coordinator-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: #000000;
+}
+
+
+/* Floating shelves effect */
+.row::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  /* background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1)); */
+}
+
+/* Holographic books effect */
+@keyframes holographic {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.coordinator-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(70deg, #5b80f0,#7203f1);
+  opacity: 0.7;
+  z-index: -1;
+  filter: blur(10px);
+  animation: holographic 10s ease infinite;
+  background-size: 200% 200%;
+}
+
+/* AI librarian effect */
+.ai-librarian {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(162, 2, 255, 0.973);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-style: italic;
+  animation: fadeInOut 5s infinite;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ai-librarian:hover {
+  background: rgb(0, 0, 0);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.container h1{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+/* Query Form Styles */
+.query-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.query-form {
+  background: linear-gradient(135deg, #1a1a4a, #0a0a2a);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.query-form h2 {
+  color: #00ffff;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.query-form .form-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.query-form .form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 0 0.2rem rgba(0, 255, 255, 0.25);
+}
+
+.query-form .btn-primary {
+  background: linear-gradient(45deg, #00ffff, #ff00ff);
+  border: none;
+}
+
+.query-form .btn-primary:hover {
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+}
+
+.query-form .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.query-form .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.bg-dark-blue-purple {
+  background: linear-gradient(135deg, #0d0018, #0d0018);
+  z-index: 1000;
+}
